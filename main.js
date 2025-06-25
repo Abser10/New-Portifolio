@@ -43,3 +43,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 type();
 });
+
+
+  const phrases = [
+  "Front-End Developer ",
+"React Developer ",
+"JavaScript Engineer ",
+"Web Developer "
+];
+
+const el = document.getElementById("typewriter");
+let phraseIndex = 0;
+let letterIndex = 0;
+let currentPhrase = "";
+let isDeleting = false;
+
+function type() {
+  if (phraseIndex >= phrases.length) phraseIndex = 0;
+
+  currentPhrase = phrases[phraseIndex];
+
+  if (isDeleting) {
+    el.textContent = currentPhrase.substring(0, letterIndex--);
+  } else {
+    el.textContent = currentPhrase.substring(0, letterIndex++);
+  }
+
+  if (!isDeleting && letterIndex === currentPhrase.length) {
+    isDeleting = true;
+    setTimeout(type, 1200);
+  } else if (isDeleting && letterIndex === 0) {
+    isDeleting = false;
+    phraseIndex++;
+    setTimeout(type, 500);
+  } else {
+    setTimeout(type, isDeleting ? 40 : 100);
+  }
+}
+
+// Start typing on page load
+type();
+// Add a click event listener to the button
+const button = document.getElementById("clickButton");

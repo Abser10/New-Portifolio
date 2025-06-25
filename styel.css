@@ -132,6 +132,7 @@ section:first-of-type {
 }
 
 .bio {
+    position: relative;
     background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #1e1f25, #2e3a59, #09152f);
     background-blend-mode: overlay;
     width: 100%;
@@ -147,6 +148,55 @@ section:first-of-type {
     color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+
+.typewriter-container {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.typewriter-wrapper {
+    font-family: monospace;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #caddfa;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    color: #00ffc6;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .typewriter-container {
+        top: 2%;
+    }
+
+    .typewriter-wrapper {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.2rem;
+    }
+}
+
 
 .bio__data {
     padding: 2rem;
@@ -643,10 +693,11 @@ p {
     background: #00a2d1;
 }
 
-@media screen and (max-width: 768px ) {
+@media screen and (max-width: 768px) {
     .contact-section {
         padding: 4rem 1rem;
     }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -655,6 +706,7 @@ p {
         margin-bottom: 2rem;
     }
 }
+
 @media screen and (max-width: 480px) {
     .contact-heading h2 {
         font-size: 2.2rem;
@@ -668,6 +720,7 @@ p {
         font-size: 1rem;
     }
 }
+
 @media screen and (max-width: 1024px) {
     .contact-heading h2 {
         font-size: 2.5rem;
@@ -680,7 +733,7 @@ p {
     .contact-heading p {
         font-size: 1.1rem;
     }
-    
+
 }
 
 
@@ -758,7 +811,9 @@ p {
 .contact-form button:hover {
     background: #00b6d1;
 }
+
 @media (max-width: 768px) {
+
     .contact-form input,
     .contact-form textarea {
         flex: 1 1 100%;
@@ -768,6 +823,7 @@ p {
         flex-direction: column;
     }
 }
+
 /* section contact End */
 
 

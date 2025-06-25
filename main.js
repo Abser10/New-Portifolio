@@ -45,8 +45,8 @@ type();
 });
 
 
-  const phrases = [
-  "Front-End Developer ",
+const phrases = [
+"Front-End Developer ",
 "React Developer ",
 "JavaScript Engineer ",
 "Web Developer "
@@ -59,26 +59,26 @@ let currentPhrase = "";
 let isDeleting = false;
 
 function type() {
-  if (phraseIndex >= phrases.length) phraseIndex = 0;
+if (phraseIndex >= phrases.length) phraseIndex = 0;
 
-  currentPhrase = phrases[phraseIndex];
+currentPhrase = phrases[phraseIndex];
 
-  if (isDeleting) {
+if (isDeleting) {
     el.textContent = currentPhrase.substring(0, letterIndex--);
-  } else {
+} else {
     el.textContent = currentPhrase.substring(0, letterIndex++);
-  }
+}
 
-  if (!isDeleting && letterIndex === currentPhrase.length) {
+if (!isDeleting && letterIndex === currentPhrase.length) {
     isDeleting = true;
     setTimeout(type, 1200);
-  } else if (isDeleting && letterIndex === 0) {
+} else if (isDeleting && letterIndex === 0) {
     isDeleting = false;
     phraseIndex++;
     setTimeout(type, 500);
-  } else {
+} else {
     setTimeout(type, isDeleting ? 40 : 100);
-  }
+}
 }
 
 // Start typing on page load

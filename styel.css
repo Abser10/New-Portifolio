@@ -1,0 +1,823 @@
+@charset "UTF-8";
+
+:root {
+    --container-width: 119rem;
+    --gutter: 2rem;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-blue: #2374e1;
+    --color-light-blue: #1d9bf0;
+    --color-dark-blue: #0a66c2;
+    --color-darker-blue: #143ce8;
+    --color-red: #ff0000;
+    --color-green: #03a696;
+    --color-grey: #f6f6f6;
+    --color-dark-green: #42959b;
+    --color-background: var(--color-white);
+    --color-text: var(--color-black);
+    --color-box-img: var(--color-black);
+    --color-link-bg: var(--color-black);
+    --color-input-border: var(--color-black);
+    --font-family-raleway: "Raleway", sans-serif;
+    --font-family-poppins: "Poppins", sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-size-70: 7rem;
+    --font-size-65: 6.5rem;
+    --font-size-40: 4rem;
+    --font-size-38: 3.8rem;
+    --font-size-24: 2.4rem;
+    --font-size-22: 2.2rem;
+    --font-size-20: 2rem;
+    --font-size-18: 1.8rem;
+    --font-size-15: 1.5rem;
+    --transition-timing: 0.3s;
+}
+
+* {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #1e1f25, #2e3a59, #09152f);
+    background-blend-mode: overlay;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ffc6;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    font-weight: 500 bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00ffc6;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+section:first-of-type {
+    padding-top: 120px;
+    /* أو حسب ارتفاع الهيدر */
+}
+
+
+/* section bio Start */
+.section {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: start;
+}
+
+.section--with-bg {
+    padding: 9.2rem 0;
+}
+
+.section--with-bg::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background-color: var(--color-grey);
+    justify-self: center;
+    z-index: -1;
+}
+
+.bio {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #1e1f25, #2e3a59, #09152f);
+    background-blend-mode: overlay;
+    width: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
+    column-gap: 7.4rem;
+    gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    padding: 5rem 2rem;
+    /* background: linear-gradient(135deg, #1e1f25, #2e3a59, #09152f); */
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.bio__data {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.bio__heading {
+    color: #90e0ef;
+    margin-bottom: 1.5rem;
+    font-size: var(--font-size-70);
+    font-weight: var(--font-weight-bold);
+    text-shadow: #f08787;
+}
+
+p {
+    font-size: 1.2em;
+    color: rgb(250, 247, 247);
+    margin-top: 20px;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+    line-height: 1.5;
+    /* text-align: justify; */
+    margin-bottom: 20px;
+}
+
+.bio__objictave {
+    font-family: var(--font-family-poppins);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-20);
+    margin: 3rem 0 4rem;
+}
+
+.bio__name {
+    color: #a3baff;
+    margin: 0.5rem 0;
+    font-size: 1.6em;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.bio__githube,
+.bio__facebock,
+.bio__linkedin,
+.bio__youtube {
+    margin-right: 0.6rem;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.bio__githube {
+    color: var(--color-green);
+}
+
+.bio__facebock {
+    color: var(--color-blue);
+}
+
+.bio__linkedin {
+    color: var(--color-dark-blue);
+}
+
+.bio__youtube {
+    color: var(--color-red);
+}
+
+.bio__download {
+    display: inline-block;
+    margin: 1rem 1rem 0 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.8rem 2.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.say-hi-link {
+    background: #7b68ee;
+    border-radius: 15px;
+    color: var(--color-white);
+    padding: 0.7rem 4.7rem;
+}
+
+.say-hi-link:hover {
+    background: #d7c6f9;
+}
+
+.find-out-link {
+    color: rgb(124, 184, 251);
+    border: 1px solid #64c9ff;
+    padding: 0.4rem 0.8rem;
+}
+
+.find-out-link:hover {
+    background-color: #64c9ff;
+    color: #000;
+}
+
+
+@keyframes jump {
+    0% {
+        transform: translateY(0.5rem);
+    }
+
+    35% {
+        transform: translateY(-0.5rem);
+    }
+
+    70% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bio__arow {
+    display: inline-block;
+    animation: jump 1s infinite alternate ease-in-out;
+}
+
+/* Pictuer start */
+.bio__pic-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    justify-self: end;
+}
+
+.bio__pic-content::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-box-img);
+    width: 100%;
+    height: 46rem;
+    z-index: -1;
+    border-radius: 1.8rem;
+    box-shadow: 2.17543px 8.7017px 38.0699px rgba(0, 0, 0, 0.15);
+}
+
+.bio__imge {
+    max-width: 100%;
+    width: 32.7rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.2);
+}
+
+
+/* pictuer End */
+/* section bio End */
+
+
+/* section service Start */
+.services-grid {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #31424a, #1b2c31, #0f171a);
+    background-blend-mode: overlay;
+    /* background: linear-gradient(135deg, #31424a, #1b2c31, #0f171a); */
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+.services-gride {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #1f2937, #0f172a, #10245a);
+    background-blend-mode: overlay;
+    /* background: linear-gradient(120deg, #1f2937, #0f172a, #10245a); */
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+.services-heading {
+    font-size: var(--font-size-65);
+    font-weight: var(--font-weight-bold);
+    grid-column: 1/-1;
+    margin-bottom: 3.2rem;
+    text-transform: uppercase;
+    color: #00e7ff;
+}
+
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 350px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+}
+
+.service-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00aaff;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    color: #7b68ee;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #ffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.service-button {
+    background-color: #22214d;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.service-button:hover {
+    background-color: #0194a7;
+}
+
+@media (max-width: 768px) {
+    .services-heading {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* section service End */
+
+/* section skills Start */
+.h2-heading {
+    color: #d4f8f0;
+    font-size: var(--font-size-65);
+    font-weight: var(--font-weight-bold);
+    grid-column: 1/-1;
+    margin-bottom: 4.7rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.skills-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-blend-mode: overlay;
+    /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+    padding: 2rem 0;
+    position: relative;
+}
+
+.skills-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollSkills 20s linear infinite;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #00ffc6;
+    border-radius: 2rem;
+    padding: 0.8rem 1.6rem;
+    margin: 0 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 8px rgba(0, 255, 200, 0.1);
+}
+
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-carousel {
+        padding: 1rem 0;
+    }
+
+    .skill-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        margin: 0 0.5rem;
+    }
+}
+
+/*skills 2*/
+.skills-typewriter {
+
+    color: #f3f7fb;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.typewriter-text {
+    color: #689eee;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.cursor {
+    display: inline-block;
+    color: #eaeaf0;
+    font-weight: bold;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes rotateWords {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* section skills End*/
+
+/* section contact Start */
+.contact-section {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 6rem 2rem;
+    font-family: Arial, sans-serif;
+}
+
+/*
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+    align-items: start;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+.contact-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-info div {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+/*///////////////////////*/
+
+.contact-cards {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #1f2937, #0f172a, #10245a);
+    background-blend-mode: overlay;
+    /* background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); */
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact-heading h2 {
+    font-size: 2.8rem;
+    color: #00e7ff;
+    margin-bottom: 0.5rem;
+}
+
+.contact-heading h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00e7ff;
+}
+
+.contact-heading p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: #111827;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00c3ff;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background: #00c3ff;
+    color: #000;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #00a2d1;
+}
+
+@media screen and (max-width: 768px ) {
+    .contact-section {
+        padding: 4rem 1rem;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        margin-bottom: 2rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .contact-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .contact-heading p {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .contact-heading h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-heading h3 {
+        font-size: 1.9rem;
+    }
+
+    .contact-heading p {
+        font-size: 1.1rem;
+    }
+    
+}
+
+
+
+/* ///////////////// */
+
+
+.contact-form-section {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-blend-mode: overlay;
+    padding: 6rem 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #00e7ff;
+}
+
+.contact-header p {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    background: linear-gradient(to bottom right, #0ea5e9, #1e3a8a);
+    padding: 3rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.form-row input {
+    flex: 1 1 30%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    outline: none;
+    background: #f9f9f9;
+    color: #111;
+}
+
+.contact-form textarea {
+    border-radius: 1rem;
+}
+
+.contact-form button {
+    padding: 1rem;
+    background: #00e7ff;
+    border: none;
+    color: #111;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #00b6d1;
+}
+@media (max-width: 768px) {
+    .contact-form input,
+    .contact-form textarea {
+        flex: 1 1 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+/* section contact End */
+
+
+/* Media Queries Responsive Fixes */
+@media screen and (max-width: 1024px) {
+    :root {
+        --font-size-70: 4rem;
+        --font-size-65: 3.5rem;
+    }
+
+    .bio__heading,
+    .services-heading,
+    .h2-heading {
+        font-size: var(--font-size-40);
+    }
+
+    .bio__data,
+    .bio__pic-content,
+    .contact-form,
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --font-size-70: 3rem;
+        --font-size-65: 2.5rem;
+        --font-size-24: 1.5rem;
+    }
+
+    .bio__heading,
+    .services-heading,
+    .h2-heading {
+        font-size: var(--font-size-24);
+    }
+
+    .bio__data,
+    .bio__pic-content,
+    .contact-form,
+    .contact-card {
+        padding: 1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row input,
+    .contact-form textarea {
+        flex: 1 1 100%;
+    }
+}
